@@ -1,22 +1,21 @@
 # fprice
 financial_price_indication
 
-
 # 3자리 숫자마다 콤마(,) 찍어주는 api
 
 - https://github.com/YoungHaKim7/fprice2
 
 # Example
 ```rs
-let int = 123456778;
-let a = fprice::fmt_num_i64_str(int);
-println!("{}", a);
+let mut price_comma = PriceComma::new(0, "".to_string()) ;
+price_comma.push(11111178);
+println!("{}", price_comma.fmt_number();
 ```
-
 # Result
 ```bash
- 123,456,778
+ (fn new)i32 Formatted number: 11,111,178//!
 ```
+
 
 
 ```rs
