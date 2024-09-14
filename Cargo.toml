@@ -1,0 +1,11 @@
+[package]
+name = "fprice2"
+version = "0.1.0"
+edition = "2021"
+authors = ["GYoung"]
+description = "3자리 마다 콤마 찍어주는 api"
+license = "MIT"
+repository = "https://github.com/YoungHaKim7/fprice2"
+homepage = "https://github.com/YoungHaKim7/fprice2"
+
+[dependencies]
