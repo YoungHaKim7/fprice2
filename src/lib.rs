@@ -3,14 +3,14 @@
 //!
 //! # Example
 //! ```rs
-//! let int = 123456778;
-//! let a = fprice::fmt_num_i64_str(int);
-//! println!("{}", a);
+//! let mut price_comma = PriceComma::new(0, "".to_string()) ;
+//! price_comma.push(11111178);
+//! println!("{}", price_comma.fmt_number();
 //! ```
 //!
 //! # Result
 //! ```bash
-//! 123,456,778
+//!  (fn new)i32 Formatted number: 11,111,178//!
 //! ```
 
 #[derive(Debug)]
@@ -136,7 +136,7 @@ mod tests {
 
     #[test]
     fn num_new_fn_test() {
-        let mut price_comma = PriceComma::new(3, "".to_string());
+        let mut price_comma = PriceComma::new(0, "".to_string());
         price_comma.push(11111178);
 
         let formatted_number = price_comma.fmt_number();
