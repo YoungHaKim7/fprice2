@@ -64,7 +64,7 @@ impl<T: ToString> Formatter for PriceComma<T> {
     // big number
     fn big_num_i64_str(&self) -> String {
         let mut formatted_number = String::new();
-        let mut count: i64 = 0;
+        let mut count = 0;
         let number_convert = self.data.to_string();
 
         // Iterate through the characters of the number from right to left
@@ -81,7 +81,7 @@ impl<T: ToString> Formatter for PriceComma<T> {
         formatted_number.chars().rev().collect()
     }
 
-    // 123.45 소수점 콤마 표시fn 
+    // 123.45 소수점 콤마 표시fn
     fn fmt_num_f64_str(&self) -> String {
         let mut formatted_number = String::new();
         let mut count = 0;
@@ -110,8 +110,8 @@ impl<T: ToString> Formatter for PriceComma<T> {
 
         formatted_number
     }
-    
-    // "123" String 숫자 콤마 표시fn 
+
+    // "123" String 숫자 콤마 표시fn
     fn fmt_num_str(&self) -> String {
         let number = self.data.to_string();
         let mut formatted_number = String::new();
@@ -154,6 +154,7 @@ mod tests {
 
         let formatted_number = price_comma.fmt_number();
         println!("i32 Formatted number: {}", formatted_number);
+        assert_eq!("123,456,789", formatted_number);
     }
 
     #[test]
@@ -165,6 +166,7 @@ mod tests {
 
         let formatted_number = price_comma.big_num_i64_str();
         println!("i128 (Big Number)Formatted number: {}", formatted_number);
+        assert_eq!("1,234,567,891,233,551,324,234,234", formatted_number);
     }
 
     #[test]
@@ -179,6 +181,7 @@ mod tests {
             "-i128 (Big Number, Minus)Formatted number: {}",
             formatted_number
         );
+        assert_eq!("-1,234,567,891,233,551,324,234,234", formatted_number);
     }
 
     #[test]
@@ -190,6 +193,7 @@ mod tests {
 
         let formatted_number = price_comma.fmt_num_f64_str();
         println!("f64 Number Formatted: {}", formatted_number);
+        assert_eq!("123,456.789", formatted_number);
     }
 
     #[test]
@@ -201,5 +205,6 @@ mod tests {
 
         let formatted_number = price_comma.fmt_num_str();
         println!("String Number Formatted: {}", formatted_number);
+        assert_eq!("12,345,667", formatted_number);
     }
 }

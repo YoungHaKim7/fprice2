@@ -1,6 +1,6 @@
 [package]
 name = "fprice2"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["GYoung"]
 description = "3자리 마다 콤마 찍어주는 api"
