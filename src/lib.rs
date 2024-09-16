@@ -10,7 +10,7 @@
 //!
 //! # Result
 //! ```bash
-//!  (fn new)i32 Formatted number: 11,111,178//!
+//!  (fn new)i32 Formatted number: 11,111,178
 //! ```
 
 #[derive(Debug)]
