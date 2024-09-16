@@ -81,6 +81,7 @@ impl<T: ToString> Formatter for PriceComma<T> {
         formatted_number.chars().rev().collect()
     }
 
+    // 123.45 소수점 콤마 표시fn 
     fn fmt_num_f64_str(&self) -> String {
         let mut formatted_number = String::new();
         let mut count = 0;
@@ -109,7 +110,8 @@ impl<T: ToString> Formatter for PriceComma<T> {
 
         formatted_number
     }
-
+    
+    // "123" String 숫자 콤마 표시fn 
     fn fmt_num_str(&self) -> String {
         let number = self.data.to_string();
         let mut formatted_number = String::new();
