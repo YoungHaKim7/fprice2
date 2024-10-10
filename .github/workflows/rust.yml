@@ -1,4 +1,4 @@
-name: Rust Build & test
+name: Rust test
 
 on:
   push:
@@ -8,9 +8,7 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
-concurrency:
-  group: ${{ gihub.workflow }}-${{ github.ref}}
-  cancel-in-progress: true
+
 jobs:
   build:
 
